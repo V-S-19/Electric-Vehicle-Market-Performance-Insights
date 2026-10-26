@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Electric Vehicle Market Intelligence & Analytics Platform{% endblock %}</title>
+  <meta name="description" content="Executive-level data analytics platform for the global electric vehicle industry, featuring interactive dashboards, SQL operations, and multi-scene Tableau story integration.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Custom Design System CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav class="navbar" id="mainNavbar">
+    <a href="/" class="nav-brand">
+      <div class="brand-icon">⚡</div>
+      <div class="brand-text">EV<span>Pulse</span> Analytics</div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Overview</a></li>
+      <li><a href="/dashboard" class="nav-link {% if request.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>
+      <li><a href="/story" class="nav-link {% if request.path == '/story' %}active{% endif %}">Story Mode</a></li>
+      <li><a href="/personas" class="nav-link {% if request.path == '/personas' %}active{% endif %}">Personas</a></li>
+      <li><a href="/sql-explorer" class="nav-link {% if request.path == '/sql-explorer' %}active{% endif %}">SQL Explorer</a></li>
+      <li><a href="/performance" class="nav-link {% if request.path == '/performance' %}active{% endif %}">Performance</a></li>
+      <li><a href="/tableau-embed" class="nav-link {% if request.path == '/tableau-embed' %}active{% endif %}">Tableau Embed</a></li>
+      <li><a href="/documentation" class="nav-link {% if request.path == '/documentation' %}active{% endif %}">Documentation</a></li>
+      <li><a href="/presentation" class="nav-link {% if request.path == '/presentation' %}active{% endif %}">Slide Deck</a></li>
+    </ul>
+
+    <div>
+      <span class="nav-badge">v2.5 Live Enterprise</span>
+    </div>
+  </nav>
+
+  <!-- Main Content Block -->
+  <main class="page-container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <strong>Global Electric Vehicle (EV) Industry Analytics Platform</strong><br>
+        Built with Python Flask, SQLite3, Tableau Integration, and ANSI SQL.
+      </div>
+      <div>
+        <span>Engineered for Strategic Decision-Making &bull; 2019-2025 Market Coverage</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

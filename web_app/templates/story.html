@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Strategic EV Market Story (5 Scenes) - Tableau Story Mode{% endblock %}
+
+{% block content %}
+<div class="story-header">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.5px;">
+        Tableau <span style="background: var(--grad-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Interactive Story</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        An executive narrative sequence guiding strategic planning, market expansion, and technology roadmaps.
+      </p>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span class="nav-badge" id="storySceneCounter">Scene 1 of 5</span>
+      <button id="storyPrevBtn" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">&larr; Prev Scene</button>
+      <button id="storyNextBtn" class="btn btn-primary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">Next Scene &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<!-- Story Scenes Navigation Bar -->
+<div class="scene-nav" id="storyNav">
+  <!-- Populated via main.js -->
+</div>
+
+<!-- Story Content Container -->
+<div id="storySceneContainer">
+  <!-- Narrative Details Card -->
+  <div class="story-narrative-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+      <h2 class="narrative-title" id="storySceneTitle">Loading story scene...</h2>
+    </div>
+    <p class="narrative-body" id="storySceneNarrative">
+      Analyzing historical trend data...
+    </p>
+    <div class="takeaway-box" id="storySceneTakeaway">
+      Loading key strategic takeaway...
+    </div>
+  </div>
+
+  <!-- Story Interactive Canvas -->
+  <div class="card" style="margin-top: 1.5rem;">
+    <div class="card-header">
+      <div class="card-title">📊 Scene Analytical Visualization</div>
+      <span class="nav-badge">Synchronized Visual Evidence</span>
+    </div>
+    <div class="chart-container" style="height: 440px;">
+      <canvas id="storyChartCanvas"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- Tableau Story Publishing Guide Box -->
+<div class="card" style="margin-top: 2rem; border-color: rgba(168, 85, 247, 0.3);">
+  <div class="card-header">
+    <div class="card-title" style="color: var(--luxe-purple);">📑 Tableau Story Points Architecture & Rubric Alignment</div>
+    <span class="nav-badge" style="border-color: var(--luxe-purple); color: var(--luxe-purple);">5 Story Points</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+    <div>
+      <strong style="color: #ffffff;">Point 1: Market Volume</strong><br>
+      Dual-axis trend line of sales units and dollar revenue from 2019 to 2025 across all territories.
+    </div>
+    <div>
+      <strong style="color: #ffffff;">Point 2: Battery Chemistries</strong><br>
+      LFP cost reduction vs NMC energy density comparison, highlighting sodium-ion and solid-state arrivals.
+    </div>
+    <div>
+      <strong style="color: #ffffff;">Point 3: Vehicle Segments</strong><br>
+      SUV and Sedan volume dominance alongside Electric Bus emissions reduction per vehicle.
+    </div>
+    <div>
+      <strong style="color: #ffffff;">Point 4: Manufacturing Hubs</strong><br>
+      Regional production vs destination export corridors (APAC, Europe, North America).
+    </div>
+    <div>
+      <strong style="color: #ffffff;">Point 5: Total Cost & Carbon</strong><br>
+      Long-term consumer TCO and corporate fleet emissions abatement benchmarking.
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,257 @@
+{
+  "dataset_metadata": {
+    "total_records": 6803,
+    "total_columns": 31,
+    "years_covered": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "total_units_sold": 151698745,
+    "total_revenue_usd": 8865607337678,
+    "total_co2_saved_tons": 352738218.8,
+    "avg_satisfaction_score": 83.71,
+    "avg_range_km": 458.5
+  },
+  "by_category": {
+    "Electric Bus": {
+      "Annual_Sales_Units": 1049703,
+      "Total_Revenue_USD": 350028215089,
+      "Driving_Range_km": 387.15,
+      "Base_Price_USD": 348625.78,
+      "Customer_Satisfaction_Score_pct": 82.56,
+      "Carbon_Emissions_Saved_Tons": 29391684.0
+    },
+    "Hatchback": {
+      "Annual_Sales_Units": 9971124,
+      "Total_Revenue_USD": 192358886857,
+      "Driving_Range_km": 351.52,
+      "Base_Price_USD": 20543.45,
+      "Customer_Satisfaction_Score_pct": 81.34,
+      "Carbon_Emissions_Saved_Tons": 17948023.2
+    },
+    "SUV": {
+      "Annual_Sales_Units": 89251780,
+      "Total_Revenue_USD": 5819828003283,
+      "Driving_Range_km": 502.45,
+      "Base_Price_USD": 67505.62,
+      "Customer_Satisfaction_Score_pct": 83.97,
+      "Carbon_Emissions_Saved_Tons": 160653204.0
+    },
+    "Sedan": {
+      "Annual_Sales_Units": 37849232,
+      "Total_Revenue_USD": 2031859691838,
+      "Driving_Range_km": 543.23,
+      "Base_Price_USD": 56654.32,
+      "Customer_Satisfaction_Score_pct": 84.48,
+      "Carbon_Emissions_Saved_Tons": 68128617.6
+    },
+    "Truck": {
+      "Annual_Sales_Units": 5172462,
+      "Total_Revenue_USD": 454966536971,
+      "Driving_Range_km": 527.94,
+      "Base_Price_USD": 88519.18,
+      "Customer_Satisfaction_Score_pct": 85.23,
+      "Carbon_Emissions_Saved_Tons": 72414468.0
+    },
+    "Two-Wheeler": {
+      "Annual_Sales_Units": 8404444,
+      "Total_Revenue_USD": 16566003640,
+      "Driving_Range_km": 105.14,
+      "Base_Price_USD": 2070.94,
+      "Customer_Satisfaction_Score_pct": 82.22,
+      "Carbon_Emissions_Saved_Tons": 4202222.0
+    }
+  },
+  "by_battery_tech": {
+    "LFP": {
+      "Annual_Sales_Units": 48520130,
+      "Driving_Range_km": 420.23,
+      "Energy_Consumption_kWh_100km": 31.46,
+      "Fast_Charging_Time_min": 42.01,
+      "Battery_Life_Cycles": 3633.51,
+      "Charge_Speed_km_per_min": 12.55
+    },
+    "NCA": {
+      "Annual_Sales_Units": 7877051,
+      "Driving_Range_km": 515.99,
+      "Energy_Consumption_kWh_100km": 17.38,
+      "Fast_Charging_Time_min": 21.96,
+      "Battery_Life_Cycles": 1906.74,
+      "Charge_Speed_km_per_min": 25.0
+    },
+    "NMC": {
+      "Annual_Sales_Units": 87213178,
+      "Driving_Range_km": 479.75,
+      "Energy_Consumption_kWh_100km": 26.52,
+      "Fast_Charging_Time_min": 29.19,
+      "Battery_Life_Cycles": 2289.81,
+      "Charge_Speed_km_per_min": 19.65
+    },
+    "Sodium-Ion": {
+      "Annual_Sales_Units": 3033978,
+      "Driving_Range_km": 300.2,
+      "Energy_Consumption_kWh_100km": 9.15,
+      "Fast_Charging_Time_min": 29.46,
+      "Battery_Life_Cycles": 2947.57,
+      "Charge_Speed_km_per_min": 14.36
+    },
+    "Solid-State": {
+      "Annual_Sales_Units": 5054408,
+      "Driving_Range_km": 578.18,
+      "Energy_Consumption_kWh_100km": 19.94,
+      "Fast_Charging_Time_min": 13.94,
+      "Battery_Life_Cycles": 4041.84,
+      "Charge_Speed_km_per_min": 43.03
+    }
+  },
+  "by_manufacturer": {
+    "BMW Group": {
+      "Annual_Sales_Units": 13795583,
+      "Total_Revenue_USD": 745865448833,
+      "Customer_Rating": 4.36,
+      "Market_Competitiveness_Score": 65.78
+    },
+    "BYD": {
+      "Annual_Sales_Units": 30636760,
+      "Total_Revenue_USD": 1650275404657,
+      "Customer_Rating": 4.07,
+      "Market_Competitiveness_Score": 58.73
+    },
+    "Hyundai-Kia": {
+      "Annual_Sales_Units": 22258145,
+      "Total_Revenue_USD": 1502322044993,
+      "Customer_Rating": 4.05,
+      "Market_Competitiveness_Score": 58.14
+    },
+    "NIO": {
+      "Annual_Sales_Units": 11397770,
+      "Total_Revenue_USD": 766073889992,
+      "Customer_Rating": 4.38,
+      "Market_Competitiveness_Score": 69.07
+    },
+    "Ola Electric": {
+      "Annual_Sales_Units": 6125967,
+      "Total_Revenue_USD": 11326116443,
+      "Customer_Rating": 4.04,
+      "Market_Competitiveness_Score": 46.67
+    },
+    "Proterra": {
+      "Annual_Sales_Units": 117191,
+      "Total_Revenue_USD": 40512101775,
+      "Customer_Rating": 4.08,
+      "Market_Competitiveness_Score": 45.84
+    },
+    "Rivian": {
+      "Annual_Sales_Units": 1943908,
+      "Total_Revenue_USD": 129783308048,
+      "Customer_Rating": 4.33,
+      "Market_Competitiveness_Score": 67.43
+    },
+    "SAIC Motor / MG": {
+      "Annual_Sales_Units": 7256483,
+      "Total_Revenue_USD": 349609980433,
+      "Customer_Rating": 4.07,
+      "Market_Competitiveness_Score": 59.53
+    },
+    "Tata Motors": {
+      "Annual_Sales_Units": 8334588,
+      "Total_Revenue_USD": 431595342536,
+      "Customer_Rating": 4.07,
+      "Market_Competitiveness_Score": 57.27
+    },
+    "Tesla": {
+      "Annual_Sales_Units": 23665668,
+      "Total_Revenue_USD": 1542640846305,
+      "Customer_Rating": 4.37,
+      "Market_Competitiveness_Score": 68.63
+    },
+    "Volkswagen Group": {
+      "Annual_Sales_Units": 16205015,
+      "Total_Revenue_USD": 1012592177704,
+      "Customer_Rating": 4.08,
+      "Market_Competitiveness_Score": 57.75
+    },
+    "Volvo Cars": {
+      "Annual_Sales_Units": 9961667,
+      "Total_Revenue_USD": 683010675959,
+      "Customer_Rating": 4.36,
+      "Market_Competitiveness_Score": 63.58
+    }
+  },
+  "by_region": {
+    "Asia-Pacific": {
+      "Annual_Sales_Units": 110409766,
+      "Total_Revenue_USD": 6422061213916,
+      "Charging_Infrastructure_Index": 84.12
+    },
+    "Europe": {
+      "Annual_Sales_Units": 29309551,
+      "Total_Revenue_USD": 1725228513613,
+      "Charging_Infrastructure_Index": 90.25
+    },
+    "Latin America": {
+      "Annual_Sales_Units": 437144,
+      "Total_Revenue_USD": 24527590195,
+      "Charging_Infrastructure_Index": 44.18
+    },
+    "Middle East & Africa": {
+      "Annual_Sales_Units": 420225,
+      "Total_Revenue_USD": 24535009230,
+      "Charging_Infrastructure_Index": 51.32
+    },
+    "North America": {
+      "Annual_Sales_Units": 11122059,
+      "Total_Revenue_USD": 669255010724,
+      "Charging_Infrastructure_Index": 78.21
+    }
+  },
+  "by_year": {
+    "2019": {
+      "Annual_Sales_Units": 6475420,
+      "Total_Revenue_USD": 430282024425,
+      "Driving_Range_km": 400.96,
+      "Carbon_Emissions_Saved_Tons": 15292230.3
+    },
+    "2020": {
+      "Annual_Sales_Units": 8552949,
+      "Total_Revenue_USD": 554014577494,
+      "Driving_Range_km": 416.21,
+      "Carbon_Emissions_Saved_Tons": 20227462.7
+    },
+    "2021": {
+      "Annual_Sales_Units": 13981618,
+      "Total_Revenue_USD": 879178536807,
+      "Driving_Range_km": 435.99,
+      "Carbon_Emissions_Saved_Tons": 31954637.5
+    },
+    "2022": {
+      "Annual_Sales_Units": 19975177,
+      "Total_Revenue_USD": 1187909247979,
+      "Driving_Range_km": 462.24,
+      "Carbon_Emissions_Saved_Tons": 45824566.7
+    },
+    "2023": {
+      "Annual_Sales_Units": 27164881,
+      "Total_Revenue_USD": 1549373584049,
+      "Driving_Range_km": 478.31,
+      "Carbon_Emissions_Saved_Tons": 61218938.6
+    },
+    "2024": {
+      "Annual_Sales_Units": 33358077,
+      "Total_Revenue_USD": 1911527524445,
+      "Driving_Range_km": 490.73,
+      "Carbon_Emissions_Saved_Tons": 79232190.4
+    },
+    "2025": {
+      "Annual_Sales_Units": 42190623,
+      "Total_Revenue_USD": 2353321842479,
+      "Driving_Range_km": 531.49,
+      "Carbon_Emissions_Saved_Tons": 98988192.6
+    }
+  }
+}

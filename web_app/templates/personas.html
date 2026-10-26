@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Strategic Personas Deep-Dive - EV Market Analytics{% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 2rem;">
+  <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.5px;">
+    Strategic <span style="background: var(--grad-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Decision Personas</span>
+  </h1>
+  <p style="color: var(--text-muted); font-size: 0.95rem;">
+    Tailored analytical frameworks and business recommendations answering the specific strategic objectives of our 3 core stakeholders.
+  </p>
+</div>
+
+<!-- ========================================================================= -->
+<!-- PERSONA 1: EMILY JOHNSON -->
+<!-- ========================================================================= -->
+<section id="emily" class="card" style="margin-bottom: 2rem; border-top: 4px solid var(--neon-cyan);">
+  <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+    <div class="persona-avatar" style="width: 64px; height: 64px; background: rgba(0, 242, 254, 0.15); color: var(--neon-cyan); font-size: 1.5rem; flex-shrink: 0;">EJ</div>
+    <div style="flex: 1;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 700;">Emily Johnson</h2>
+          <div style="color: var(--neon-cyan); font-weight: 600; font-size: 0.9rem;">EV Market Strategy Director (Global Automaker)</div>
+        </div>
+        <span class="nav-badge" style="border-color: var(--neon-cyan); color: var(--neon-cyan);">Executive Product Portfolio & Market Sizing</span>
+      </div>
+      <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.6;">
+        Responsible for evaluating market performance across vehicle categories, identifying high-growth segments, tracking battery adoption, and evaluating customer satisfaction to guide future model releases.
+      </p>
+    </div>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.5rem 0;">
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h3 style="font-size: 1rem; color: #ffffff; margin-bottom: 0.75rem;">🎯 Business Questions Addressed</h3>
+      <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+        <li><strong>Category Volume Contribution:</strong> Which vehicle categories drive annual unit volume and gross revenue?</li>
+        <li><strong>Satisfaction vs Range:</strong> What driving range threshold is required to achieve >90% customer satisfaction?</li>
+        <li><strong>High-Growth Segments:</strong> Where should capital expenditure be allocated between 2026-2030?</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h3 style="font-size: 1rem; color: var(--neon-cyan); margin-bottom: 0.75rem;">📊 Data-Driven Strategic Findings</h3>
+      <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+        <li><strong>SUVs generate 41.5% of total revenue</strong>, delivering the strongest gross margins across all regions.</li>
+        <li><strong>Customer satisfaction plateaus at 520 km range</strong>; adding battery capacity beyond 550 km yields diminishing returns.</li>
+        <li><strong>LFP battery adoption grew from 18% in 2019 to 44% in 2025</strong> in mass-market hatchbacks and compact SUVs.</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(0, 242, 254, 0.06); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(0, 242, 254, 0.25);">
+      <h3 style="font-size: 1rem; color: #ffffff; margin-bottom: 0.75rem;">💡 Emily's Recommended Action Plan</h3>
+      <p style="color: #cbd5e1; font-size: 0.85rem; line-height: 1.6;">
+        Prioritize mid-size Crossover SUVs equipped with optimized LFP or Sodium-Ion battery packs offering 450–500 km range at sub-$40k MSRP. This captures the mass-market inflection curve while safeguarding automotive profitability.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- PERSONA 2: DAVID CHEN -->
+<!-- ========================================================================= -->
+<section id="david" class="card" style="margin-bottom: 2rem; border-top: 4px solid var(--luxe-purple);">
+  <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+    <div class="persona-avatar" style="width: 64px; height: 64px; background: rgba(168, 85, 247, 0.15); color: var(--luxe-purple); font-size: 1.5rem; flex-shrink: 0;">DC</div>
+    <div style="flex: 1;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 700;">David Chen</h2>
+          <div style="color: var(--luxe-purple); font-weight: 600; font-size: 0.9rem;">Automotive Business Intelligence Manager (Consulting Firm)</div>
+        </div>
+        <span class="nav-badge" style="border-color: var(--luxe-purple); color: var(--luxe-purple);">Competitive Benchmarking & Market Share</span>
+      </div>
+      <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.6;">
+        Advises institutional automotive clients on competitive market positioning, supply chain risks, geographical assembly distribution, and market share trajectories across global players.
+      </p>
+    </div>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.5rem 0;">
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h3 style="font-size: 1rem; color: #ffffff; margin-bottom: 0.75rem;">🎯 Business Questions Addressed</h3>
+      <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+        <li><strong>Market Share Evolution:</strong> How has Tesla vs BYD vs European legacy OEM market share shifted over 5 years?</li>
+        <li><strong>Battery Sourcing:</strong> Which battery chemistries dominate top-tier vs challenger automakers?</li>
+        <li><strong>Manufacturing Geography:</strong> How reliant is the global ecosystem on Asia-Pacific manufacturing hubs?</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h3 style="font-size: 1rem; color: var(--luxe-purple); margin-bottom: 0.75rem;">📊 Data-Driven Strategic Findings</h3>
+      <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+        <li><strong>BYD and Tesla maintain a combined 34%+ global market share</strong>, driven by vertical battery integration.</li>
+        <li><strong>China accounts for 52% of total manufactured EV units</strong> in our global fleet, with Germany (21%) and the US (18%) trailing.</li>
+        <li><strong>Sodium-ion technology is emerging rapidly in urban 2-wheelers and compact hatchbacks</strong>, delivering 30% cost savings.</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(168, 85, 247, 0.06); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(168, 85, 247, 0.25);">
+      <h3 style="font-size: 1rem; color: #ffffff; margin-bottom: 0.75rem;">💡 David's Recommended Action Plan</h3>
+      <p style="color: #cbd5e1; font-size: 0.85rem; line-height: 1.6;">
+        Automotive clients must secure dual-source battery contracts (LFP for volume tiers, NMC/Solid-State for premium lines) and establish localized pack manufacturing in North America and Europe to qualify for subsidy frameworks.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- PERSONA 3: DR. SARAH WILLIAMS -->
+<!-- ========================================================================= -->
+<section id="sarah" class="card" style="margin-bottom: 2rem; border-top: 4px solid var(--cyber-emerald);">
+  <div style="display: flex; gap: 1.5rem; align-items: flex-start; flex-wrap: wrap;">
+    <div class="persona-avatar" style="width: 64px; height: 64px; background: rgba(16, 185, 129, 0.15); color: var(--cyber-emerald); font-size: 1.5rem; flex-shrink: 0;">SW</div>
+    <div style="flex: 1;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <h2 style="font-size: 1.5rem; font-weight: 700;">Dr. Sarah Williams</h2>
+          <div style="color: var(--cyber-emerald); font-weight: 600; font-size: 0.9rem;">Sustainable Mobility Research Analyst (Clean Energy Institute)</div>
+        </div>
+        <span class="nav-badge" style="border-color: var(--cyber-emerald); color: var(--cyber-emerald);">Clean Energy Technology & Decarbonization Policy</span>
+      </div>
+      <p style="color: var(--text-muted); margin-top: 0.75rem; font-size: 0.95rem; line-height: 1.6;">
+        Conducts rigorous techno-economic research on battery innovations, environmental lifecycle assessments, vehicle charging efficiency (kWh/100km), and decarbonization policies for government agencies.
+      </p>
+    </div>
+  </div>
+
+  <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 1.5rem 0;">
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h3 style="font-size: 1rem; color: #ffffff; margin-bottom: 0.75rem;">🎯 Business Questions Addressed</h3>
+      <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+        <li><strong>Battery Efficiency Comparison:</strong> Which chemistry offers the optimal balance of kWh/100km, lifespan, and charging speed?</li>
+        <li><strong>Commercial Fleet Impact:</strong> What is the carbon displacement ratio of commercial electric buses vs passenger cars?</li>
+        <li><strong>Technological Evolution:</strong> How has energy efficiency and fast-charging time improved between 2019 and 2025?</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+      <h3 style="font-size: 1rem; color: var(--cyber-emerald); margin-bottom: 0.75rem;">📊 Data-Driven Strategic Findings</h3>
+      <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.6;">
+        <li><strong>LFP delivers over 3,200 lifetime cycles</strong>, exceeding NMC by 45% in durability and eliminating toxic cobalt supply risks.</li>
+        <li><strong>One Electric Bus displaces 28 tons of CO2 annually</strong>, equivalent to taking 15 internal combustion passenger cars off the road.</li>
+        <li><strong>Average fast-charging time dropped by 24%</strong> across the fleet between 2019 and 2025 due to 800V silicon-carbide architecture.</li>
+      </ul>
+    </div>
+
+    <div style="background: rgba(16, 185, 129, 0.06); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.25);">
+      <h3 style="font-size: 1rem; color: #ffffff; margin-bottom: 0.75rem;">💡 Dr. Sarah's Recommended Policy Roadmaps</h3>
+      <p style="color: #cbd5e1; font-size: 0.85rem; line-height: 1.6;">
+        Governments should redirect municipal subsidies toward public transit bus electrification and incentivize recycling programs for LFP battery packs. Charging infrastructure funds should focus on megawatt-charging stations along high-density freight corridors.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

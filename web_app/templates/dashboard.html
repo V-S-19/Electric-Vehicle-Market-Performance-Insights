@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}Executive EV Market Analytics Dashboard{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+  <div>
+    <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.5px;">
+      Executive <span style="background: var(--grad-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">EV Market Intelligence</span> Dashboard
+    </h1>
+    <p style="color: var(--text-muted); font-size: 0.95rem;">
+      Real-time filtering across 6,803 records, multi-dimensional aggregations, and comparative segment performance.
+    </p>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span class="nav-badge" id="queryLatencyBadge">⚡ Querying...</span>
+    <button id="resetFiltersBtn" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.8rem;">↺ Reset Filters</button>
+  </div>
+</div>
+
+<!-- Multi-Parameter Filters Bar -->
+<div class="filters-bar" id="dashboardFilters">
+  <!-- Model Year Filter -->
+  <div class="filter-group">
+    <label class="filter-label" for="filterYear">Model Year</label>
+    <select class="filter-select" id="filterYear">
+      <option value="all">All Years (2019-2025)</option>
+    </select>
+  </div>
+
+  <!-- Vehicle Category Filter -->
+  <div class="filter-group">
+    <label class="filter-label" for="filterCategory">Vehicle Category</label>
+    <select class="filter-select" id="filterCategory">
+      <option value="all">All Categories</option>
+    </select>
+  </div>
+
+  <!-- Battery Technology Filter -->
+  <div class="filter-group">
+    <label class="filter-label" for="filterBattery">Battery Technology</label>
+    <select class="filter-select" id="filterBattery">
+      <option value="all">All Chemistries</option>
+    </select>
+  </div>
+
+  <!-- Sales Region Filter -->
+  <div class="filter-group">
+    <label class="filter-label" for="filterRegion">Sales Region</label>
+    <select class="filter-select" id="filterRegion">
+      <option value="all">All Global Regions</option>
+    </select>
+  </div>
+
+  <!-- Manufacturer Filter -->
+  <div class="filter-group">
+    <label class="filter-label" for="filterManufacturer">Manufacturer</label>
+    <select class="filter-select" id="filterManufacturer">
+      <option value="all">All Automakers</option>
+    </select>
+  </div>
+</div>
+
+<!-- Dynamic KPI Metrics Grid -->
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-label">Total EV Deliveries</div>
+    <div class="kpi-value" id="kpiSalesUnits">-</div>
+    <div class="kpi-subtext">🚘 Global Annual Units</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Market Revenue</div>
+    <div class="kpi-value" id="kpiRevenue">-</div>
+    <div class="kpi-subtext">💵 Cumulative Gross Sales</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Avg Driving Range</div>
+    <div class="kpi-value" id="kpiAvgRange">-</div>
+    <div class="kpi-subtext">⚡ Real-World Single Charge</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Avg Selling Price</div>
+    <div class="kpi-value" id="kpiAvgPrice">-</div>
+    <div class="kpi-subtext">🏷️ Base MSRP (USD)</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Customer Satisfaction</div>
+    <div class="kpi-value" id="kpiAvgSatisfaction">-</div>
+    <div class="kpi-subtext">⭐ Verified Consumer Score</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">CO2 Abated</div>
+    <div class="kpi-value" id="kpiCo2Saved">-</div>
+    <div class="kpi-subtext">🌱 Metric Tons Displaced</div>
+  </div>
+</div>
+
+<!-- Visualization Grid Row 1 -->
+<div class="chart-grid-2">
+  <!-- Chart 1: Annual Sales & Revenue Trajectory -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">📈 Annual Sales Volume & Revenue Trajectory (2019-2025)</div>
+      <span style="font-size: 0.75rem; color: var(--text-dim);">Dual-Axis Trend</span>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartYearly"></canvas>
+    </div>
+  </div>
+
+  <!-- Chart 2: Category Distribution -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">🍩 Vehicle Category Market Contribution</div>
+      <span style="font-size: 0.75rem; color: var(--text-dim);">Volume Share</span>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartCategory"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- Visualization Grid Row 2 -->
+<div class="chart-grid-2">
+  <!-- Chart 3: Top Manufacturers by Sales -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">🏆 Top EV Manufacturers by Delivery Volume</div>
+      <span style="font-size: 0.75rem; color: var(--text-dim);">Competitive Ranking</span>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartMfg"></canvas>
+    </div>
+  </div>
+
+  <!-- Chart 4: Battery Technology Performance -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">🔋 Battery Tech Benchmark: Range vs Fast-Charge</div>
+      <span style="font-size: 0.75rem; color: var(--text-dim);">Chemistry Comparison</span>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartBattery"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- Visualization Grid Row 3 -->
+<div class="chart-grid-2">
+  <!-- Chart 5: Regional Sales Contribution -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">🌍 Global Regional Market Distribution</div>
+      <span style="font-size: 0.75rem; color: var(--text-dim);">Geographical Demand</span>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartRegion"></canvas>
+    </div>
+  </div>
+
+  <!-- Chart 6: Category vs Range & Price -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">⚖️ Driving Range vs Base Price by Category</div>
+      <span style="font-size: 0.75rem; color: var(--text-dim);">Value Proposition</span>
+    </div>
+    <div class="chart-container">
+      <canvas id="chartRangePrice"></canvas>
+    </div>
+  </div>
+</div>
+{% endblock %}

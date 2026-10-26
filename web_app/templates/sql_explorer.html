@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Interactive SQL Query Explorer & DB Benchmarks - EV Market Analytics{% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 2rem;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.5px;">
+        Interactive <span style="background: var(--grad-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SQL Explorer</span>
+      </h1>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        Directly execute ANSI SQL analytical queries against the SQLite database with real-time latency benchmarking.
+      </p>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <span class="nav-badge" id="sqlExecutionLatency">Latency: 0 ms</span>
+      <span class="nav-badge" id="sqlRowCount" style="border-color: var(--luxe-purple); color: var(--luxe-purple);">Rows: 0</span>
+    </div>
+  </div>
+</div>
+
+<!-- Preset Query Selector Chips -->
+<div class="card" style="margin-bottom: 1.5rem;">
+  <div class="card-header">
+    <div class="card-title">⚡ Pre-Configured Persona Workloads (Click to Load)</div>
+    <span style="font-size: 0.75rem; color: var(--text-dim);">ANSI SQL / SQLite 3</span>
+  </div>
+  <div class="query-presets">
+    <button class="preset-chip" data-query="SELECT model_year, vehicle_category, SUM(annual_sales_units) as total_units, SUM(total_revenue_usd) as total_rev, ROUND(AVG(customer_satisfaction_score_pct), 1) as avg_satisfaction FROM ev_market_analytics GROUP BY model_year, vehicle_category ORDER BY model_year DESC, total_units DESC;">
+      👩 Emily: Category Sales & Revenue by Year
+    </button>
+    <button class="preset-chip" data-query="WITH YearlyMfg AS (SELECT model_year, manufacturer, SUM(annual_sales_units) AS units FROM ev_market_analytics GROUP BY model_year, manufacturer) SELECT model_year, manufacturer, units, LAG(units, 1) OVER (PARTITION BY manufacturer ORDER BY model_year) AS prev_year_units, RANK() OVER (PARTITION BY model_year ORDER BY units DESC) as mfg_rank FROM YearlyMfg WHERE model_year >= 2022 ORDER BY model_year DESC, units DESC;">
+      👩 Emily: Top Manufacturers & YoY Growth (LAG Window)
+    </button>
+    <button class="preset-chip" data-query="SELECT model_year, manufacturer, SUM(annual_sales_units) AS units, ROUND(SUM(annual_sales_units) * 100.0 / SUM(SUM(annual_sales_units)) OVER (PARTITION BY model_year), 2) AS market_share_pct FROM ev_market_analytics WHERE model_year = 2025 GROUP BY model_year, manufacturer ORDER BY units DESC;">
+      👨 David: 2025 Global Market Share (SUM OVER Window)
+    </button>
+    <button class="preset-chip" data-query="SELECT manufacturing_country, sales_region, SUM(annual_sales_units) as units_exported, SUM(total_revenue_usd) as revenue_usd, ROUND(AVG(base_price_usd), 0) as avg_price FROM ev_market_analytics GROUP BY manufacturing_country, sales_region ORDER BY units_exported DESC LIMIT 15;">
+      👨 David: Geographical Production vs Sales Corridors
+    </button>
+    <button class="preset-chip" data-query="SELECT battery_technology, COUNT(*) as model_variants, ROUND(AVG(driving_range_km), 1) as avg_range_km, ROUND(AVG(energy_consumption_kwh_100km), 2) as avg_kwh_100km, ROUND(AVG(fast_charging_time_min), 1) as avg_fast_charge_min, ROUND(AVG(battery_life_cycles), 0) as avg_lifespan_cycles FROM ev_market_analytics GROUP BY battery_technology ORDER BY avg_range_km DESC;">
+      🔬 Dr. Sarah: Battery Tech Efficiency & Lifespan
+    </button>
+    <button class="preset-chip" data-query="SELECT vehicle_category, SUM(annual_sales_units) as total_fleet, ROUND(SUM(carbon_emissions_saved_tons), 1) as total_co2_saved_tons, ROUND(SUM(carbon_emissions_saved_tons) / SUM(annual_sales_units), 2) as co2_saved_per_vehicle_tons FROM ev_market_analytics GROUP BY vehicle_category ORDER BY total_co2_saved_tons DESC;">
+      🔬 Dr. Sarah: Carbon Abatement ROI by Category
+    </button>
+  </div>
+</div>
+
+<!-- SQL Editor & Execution Bar -->
+<div class="card" style="margin-bottom: 1.5rem;">
+  <div class="sql-editor-container">
+    <textarea id="sqlQueryInput" class="sql-textarea" spellcheck="false" placeholder="Write or paste your SELECT query here...">SELECT model_year, vehicle_category, SUM(annual_sales_units) as total_units, SUM(total_revenue_usd) as total_rev, ROUND(AVG(customer_satisfaction_score_pct), 1) as avg_satisfaction FROM ev_market_analytics GROUP BY model_year, vehicle_category ORDER BY model_year DESC, total_units DESC LIMIT 20;</textarea>
+    <div style="display: flex; justify-content: flex-end; gap: 10px;">
+      <button id="executeSqlBtn" class="btn btn-primary">⚡ Execute Query</button>
+    </div>
+  </div>
+</div>
+
+<!-- Results Container -->
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">📋 Query Results Output</div>
+    <span style="font-size: 0.75rem; color: var(--text-dim);">Tabulated Result Set</span>
+  </div>
+  <div id="sqlResultsContainer">
+    <div style="text-align: center; padding: 2.5rem; color: var(--text-dim);">
+      Click "Execute Query" or select a preset chip above to run your first analytical query.
+    </div>
+  </div>
+</div>
+{% endblock %}
